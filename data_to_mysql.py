@@ -34,8 +34,10 @@ def insert_texts(pages, disciplines, cur):
                 continue
             creation_date = fake.date_time_between(start_date="-3y",end_date="-30d")
             last_changed = fake.date_time_between(start_date=creation_date,end_date="+1d")
-            data = (key, value, creation_date, last_changed, count_disc)
-            sql = "INSERT INTO nota (titulo, texto, ultima_modificacao, data_criacao, disciplina) VALUES (%s, %s, %s, %s, %s)"
+            number_of_changes = random.randint(5,22)
+            print(number_of_changes)
+            data = (key, value, creation_date, last_changed, number_of_changes, count_disc)
+            sql = "INSERT INTO nota (titulo, texto, ultima_modificacao, data_criacao, numero_edicoes, disciplina) VALUES (%s, %s, %s, %s, %s, %s)"
             cur.execute(sql, data)
         count_disc+=1
 
