@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS notes.nota (
   texto TEXT NOT NULL,
   ultima_modificacao DATETIME NOT NULL,
   data_criacao DATETIME NOT NULL,
+  numero_edicoes INT NOT NULL,
   disciplina INT NOT NULL,
   PRIMARY KEY (id_nota),
   INDEX fk_nota_disciplina_idx (disciplina ASC) VISIBLE,
@@ -22,4 +23,3 @@ CREATE TABLE IF NOT EXISTS notes.nota (
     REFERENCES notes.disciplina (id_disciplina)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
