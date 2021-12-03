@@ -27,8 +27,11 @@ def insert_disciplines(disciplines, cur):
 def insert_texts(pages, disciplines, cur):
     fake = Faker()
     count_disc = 1
+    remove_list = ('Wikipédia', "ISO")
     for page in pages:
         for key, value in page.items():
+            if(key.startswith(remove_list)):
+                continue
             creation_date = fake.date_time_between(start_date="-3y",end_date="-30d")
             last_changed = fake.date_time_between(start_date=creation_date,end_date="+1d")
             data = (key, value, creation_date, last_changed, count_disc)
