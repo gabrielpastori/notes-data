@@ -6,6 +6,8 @@ import ast
 import random
 from faker import Faker
 
+random.seed(10)
+
 def parse_sql(sql_file_path):
     with open(sql_file_path, 'r', encoding='utf-8') as f:
         data = f.read().splitlines()
@@ -34,15 +36,15 @@ def get_notes(path):
         
 def insert_disciplines(disciplines, cur):
     for discipline in disciplines:
-        period = random.randint(0,10)
+        period = random.randint(1,8)
         data = (discipline, period)
         sql = "INSERT INTO disciplina (nome, periodo) VALUES (%s, %s)"
         cur.execute(sql, data)
 
 def insert_texts(pages, disciplines, cur):
-    Faker.seed(10)
+    Faker.seed(0)
     fake = Faker()
-    random.seed(10)
+    fake.seed_instance(0)
     count_disc = 1
     remove_list = ('Wikipédia', "ISO")
     for page in pages:
