@@ -26,6 +26,8 @@ def insert_disciplines(disciplines, cur):
 
 def insert_texts(pages, disciplines, cur):
     fake = Faker()
+    random.seed(10)
+    Faker.seed(10)
     count_disc = 1
     remove_list = ('Wikipédia', "ISO")
     for page in pages:
