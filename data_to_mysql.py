@@ -40,9 +40,9 @@ def insert_disciplines(disciplines, cur):
         cur.execute(sql, data)
 
 def insert_texts(pages, disciplines, cur):
+    Faker.seed(10)
     fake = Faker()
     random.seed(10)
-    Faker.seed(10)
     count_disc = 1
     remove_list = ('Wikipédia', "ISO")
     for page in pages:
