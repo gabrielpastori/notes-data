@@ -7,13 +7,13 @@ import random
 from faker import Faker
 
 def get_disciplines(path):
-    discipline_file = open(path, 'r')
+    discipline_file = open(path, 'r', encoding='utf8')
     discipline = discipline_file.read()
     discipline_list = discipline.split(',')    
     return discipline_list
 
 def get_notes(path):
-    with open(path, "r") as inFile:
+    with open(path, "r", encoding='utf8') as inFile:
         data = ast.literal_eval(inFile.read())
         return data
         
