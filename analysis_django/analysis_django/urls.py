@@ -22,6 +22,8 @@ urlpatterns = [
     path('app_breno/', include("app_breno.urls")),
     path('app_gustavo/', include("app_gustavo.urls")),
     path('app_cleomar/', include("app_cleomar.urls")),
+    path('', include("app_home.urls")),
+
 
 
 

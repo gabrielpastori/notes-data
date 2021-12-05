@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.analysis_cleomar)
+    path("", views.analysis_cleomar, name="cleomar")
 ]
