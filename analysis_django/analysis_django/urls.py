@@ -21,6 +21,8 @@ urlpatterns = [
     path('app_gabriel/', include("app_gabriel.urls")),
     path('app_breno/', include("app_breno.urls")),
     path('app_gustavo/', include("app_gustavo.urls")),
+    path('app_cleomar/', include("app_cleomar.urls")),
+
 
 
 ]

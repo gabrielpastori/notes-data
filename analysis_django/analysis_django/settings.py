@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app_gabriel',
     'app_breno',
     'app_gustavo',
+    'app_cleomar',
 ]
 
 MIDDLEWARE = [
